@@ -114,6 +114,13 @@ class JobsController extends Controller
 
     }
 
+
+    public function delete($id){
+
+        $job = Job::where('id', $id)->first();
+        return view('jobs.delete');
+    }
+
     /**
      * Remove the specified resource from storage.
      *
@@ -122,7 +129,12 @@ class JobsController extends Controller
      */
     public function destroy($id)
     {
-        //
+     $job = Job::where('id', $id)->first();
+     $job->delete();
+
+
+
+     return redirect()->action('HomeController@index');
     }
 
 

@@ -37,6 +37,8 @@ Route::get('/jobs/{id}', 'JobsController@show');
 Route::get('/jobs/{id}/edit', 'JobsController@edit');
 Route::post('/jobs/{id}/edit', 'JobsController@update');
 Route::post('/jobs/create', 'JobsController@store');
+Route::get('/jobs/{id}/delete', 'JobsController@delete');
+Route::post('/jobs/{id}/delete', 'JobsController@destroy');
 
 
 /*

@@ -55,7 +55,7 @@
                                 <a href="jobs/{{$job->id}}/edit">Edit Job</a>
                             </td>
                             <td>
-                                <a href="">Delete Job</a>
+                                <a href="jobs/{{$job->id}}/delete">Delete Job</a>
                             </td>
                         </tr>
                         @endforeach
