@@ -25,7 +25,7 @@ class HomeController extends Controller
      */
     public function index(Job $job)
     {   $id = Auth::id();
-        $jobs = $job->where('id', $id)->get();
+        $jobs = $job->where('user_id', $id)->get();
         return view('home', compact('jobs'));
     }
 }
