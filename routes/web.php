@@ -34,6 +34,8 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/', 'JobsController@index');
 Route::get('/jobs/create', 'JobsController@create');
 Route::get('/jobs/{id}', 'JobsController@show');
+Route::get('/jobs/{id}/edit', 'JobsController@edit');
+Route::post('/jobs/{id}/edit', 'JobsController@update');
 Route::post('/jobs/create', 'JobsController@store');
 
 
@@ -52,9 +54,9 @@ Route::post('/jobs/create', 'JobsController@store');
 //Create new application 
 Route::post('/jobs/{id}', 'ApplicationsController@store');
 
-//Show all applications for specific job listing.
+//Show all applications for specific job listing. This needs to be protected by middleware. 
 Route::get('/jobs/{id}/applications', 'ApplicationsController@index');
 
-//View individual Application 
+//View individual Application. This also needs to be protected by middleware. 
 Route::get('/application/{id}', 'ApplicationsController@show');
 

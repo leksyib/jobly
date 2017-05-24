@@ -43,16 +43,16 @@
                             {{$job->title}}
                             </td>
                             <td>
-                             
+                             {{$job->applications->count()}}
                             </td>
                             <td>
                                 
                             </td>
                             <td>
-                                <a href="">View Applications</a>
+                                <a href="/jobs/{{$job->id}}/applications">View Applications</a>
                             </td>
                             <td>
-                                <a href="">Edit Job</a>
+                                <a href="jobs/{{$job->id}}/edit">Edit Job</a>
                             </td>
                             <td>
                                 <a href="">Delete Job</a>
