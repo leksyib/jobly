@@ -22,17 +22,20 @@
 <div class="container">
 
 <div class="col-md-6 col-md-offset-3">
-    <h3>Recent Listings</h3>
     @foreach($alljobs as $job)
     <div class="panel panel-default">
-    <div class="panel-heading">   {{$job->title}}</div>
-    <div class="panel-heading">
-    {{$job->description}}
-    <a class="btn btn-success" href="/jobs/{{$job->id}}">Read more</a>
+        <div class="panel-body">
+        <h3><a href="/jobs/{{$job->id}}">{{$job->title}}</a></h3>
+        <p>Employer Name</p>
+        <p>Attractive package
+        Great career opportunities
+        A solid career with an iconic Australian owned company
+        Fantastic opportunity for a highly motivated Account Manager with a passion for growing business through well developed contacts</p>
+        </div>
     </div>
-    </div>   
-
     @endforeach
+</div>
+
 
 </div>
 
