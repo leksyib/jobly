@@ -86,7 +86,8 @@ class JobsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $job = Job::where('id', $id)->first();
+        return view('jobs.edit', compact('job'));
     }
 
     /**
@@ -98,7 +99,19 @@ class JobsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $job = Job::where('id', $id)->first();
+         $job->title = $request->title;
+        $job->description = $request->description;
+        $job->provider = $request->provider;
+        $job->location = $request->location;
+        $job->user_id = Auth::id();
+        $job->type = $request->type;
+        $job->classification = $request->classification;
+        $job->applicationsclose = Carbon::now();
+        $job->save();
+        $id = $job->id;
+        return redirect()->action('JobsController@show', compact('id'));
+
     }
 
     /**
