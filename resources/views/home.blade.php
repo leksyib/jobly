@@ -4,9 +4,17 @@
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
+
+
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <a href="/jobs/create">Create new job listing</a>
+            </div>
+        </div>
+
+
             <div class="panel panel-default">
                 <div class="panel-heading">Your Job Listings</div>
-
                 <div class="panel-body">
                                     <table class="table">
                     <thead>

@@ -55,13 +55,15 @@ class JobsController extends Controller
         $job->description = $request->description;
         $job->provider = $request->provider;
         $job->location = $request->location;
+        $job->user_id = Auth::id();
         $job->type = $request->type;
         $job->classification = $request->classification;
         $job->applicationsclose = Carbon::now();
         $job->save();
 
-        //Needs to return to newly created job.
-        return view('home');
+        // Show the newly created job. 
+        $id = $job->id;
+        return redirect()->action('JobsController@show', compact('id'));
     }
 
     /**
